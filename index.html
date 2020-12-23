@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section style="text-align: center;">
+        <h1>TO DO LIST</h1>
+        <input type="text" name="Item name" id="newitem">
+        <button type="submit" onclick="addItems()" id="btn">Add Item</button>
+        
+        
+        <!-- Creating a list -->
+        <!-- Adding two default items -->
+        <script>
+            var listItems = ['Wakeup at 6am','Freshup and make breakfast'];
+        </script>
+        <script>
+            function addItems(){
+                var new_list = document.getElementById("newitem").value
+                listItems.push(new_list);
+                displayList(new_list);
+            }
+
+            function deleteItems(){
+                // deleteitems();
+                var i;
+                for(i=0;i<listItems.length;i++){
+                    var div = listItems.pop();
+                    console.log(div);
+                    div.style.display = 'none';
+                }
+            }
+            
+            </script>
+        <div id="display">
+            <ul>
+                <script>
+                    listItems.forEach(displayList);
+                    
+                    function displayList(item){
+                        document.getElementById("display").innerHTML += "<li>"+item+"</li>";
+                        // document.getElementById("display").innerHTML += "<span></span>"+"<button></button>"
+                        
+                    }
+
+                </script>
+            </ul>
+        </div>
+        <!-- Adding to list -->
+        <!-- Display whole list -->
+        
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
